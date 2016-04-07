@@ -11,7 +11,7 @@ test_that("mvnorm stops when arguments are incorrect", {
   coval<- matrix(eps, nrow=param.s, ncol=param.s)
   d<-diag(1.0 - eps, param.s)
   param.coval <- coval + d
-  expect_error(mvnorm(param.lower, param.upper, param.mean, param.coval),
+  expect_error(mvnorm(param.s, param.lower, param.upper, param.mean, param.coval),
   "dimension mismatch!", fixed=TRUE)
 
   param.mean <- rep(0.0, param.s)
@@ -19,7 +19,7 @@ test_that("mvnorm stops when arguments are incorrect", {
   coval<- matrix(eps, nrow=param.s, ncol=param.s)
   d<-diag(1.0 - eps, param.s)
   param.coval <- coval + d
-  expect_error(mvnorm(param.lower, param.upper, param.mean, param.coval),
+  expect_error(mvnorm(param.s, param.lower, param.upper, param.mean, param.coval),
   "coval is not diagonally dominant", fixed=TRUE)
 
   param.mean <- rep(0.0, param.s)
@@ -28,7 +28,7 @@ test_that("mvnorm stops when arguments are incorrect", {
   coval[1,2] <- 0.003
   d<-diag(1.0 - eps, param.s)
   param.coval <- coval + d
-  expect_error(mvnorm(param.lower, param.upper, param.mean, param.coval),
+  expect_error(mvnorm(param.s, param.lower, param.upper, param.mean, param.coval),
   "coval is not symmetric", fixed=TRUE)
 
 })

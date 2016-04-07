@@ -37,7 +37,8 @@ variance-covariance matrix should be given.
         d<-diag(1.0 - eps, param.s)
         param.coval <- coval + d
         options(digits=20)
-        rs <- mvnorm(lower=param.lower,
+        rs <- mvnorm(dimension=param.s,
+                     lower=param.lower,
                      upper=param.upper,
                      mean=param.mean,
                      coval=param.coval)
@@ -61,7 +62,8 @@ Optional parameter `relesp` is usable for relative error.
         d<-diag(1.0 - eps, param.s)
         param.coval <- coval + d
         options(digits=20)
-        rs <- mvnorm(lower=param.lower,
+        rs <- mvnorm(dimension=param.s,
+                     lower=param.lower,
                      upper=param.upper,
                      mean=param.mean,
                      coval=param.coval,
@@ -71,8 +73,8 @@ Optional parameter `relesp` is usable for relative error.
 
 example3:
 
-Optional parameter `probability` is used for specifying a probability
-that the true value is in error range. This probability result to
+Optional parameter `confidenceLevel` is used for specifying a confidenceLevel
+that the true value is in error range. This confidenceLevel result to
 specify error range as sigma, two sigma and three sigma.
 
 ```{r}
@@ -86,20 +88,21 @@ specify error range as sigma, two sigma and three sigma.
         d<-diag(1.0 - eps, param.s)
         param.coval <- coval + d
         options(digits=20)
-        rs <- mvnorm(lower=param.lower,
+        rs <- mvnorm(dimension=param.s,
+                     lower=param.lower,
                      upper=param.upper,
                      mean=param.mean,
                      coval=param.coval,
-                     probability=0.98)
+                     confidenceLevel=0.98)
         rs
 ```
 example4:
 
-Optional parameter `tlimit` is used for specifying time limit
+Optional parameter `timeLimit` is used for specifying time limit
 by seconds.
 Calculation will be stop with some late after time limit.
 After time limit, calculated value will be returned, but
-it may not satisfy expected error range or probability.
+it may not satisfy expected error range or confidenceLevel.
 
 ```{r}
         library(lwafomps)
@@ -112,12 +115,13 @@ it may not satisfy expected error range or probability.
         d<-diag(1.0 - eps, param.s)
         param.coval <- coval + d
         options(digits=20)
-        rs <- mvnorm(lower=param.lower,
+        rs <- mvnorm(dimension=param.s,
+                     lower=param.lower,
                      upper=param.upper,
                      mean=param.mean,
                      coval=param.coval,
-                     probability=0.98,
-                     tlimit=1.5)
+                     confidenceLevel=0.98,
+                     timeLimit=1.5)
         rs
 ```
 example5:
@@ -139,11 +143,12 @@ performance.
         d<-diag(1.0 - eps, param.s)
         param.coval <- coval + d
         options(digits=20)
-        rs <- mvnorm(lower=param.lower,
+        rs <- mvnorm(dimension=param.s,
+                     lower=param.lower,
                      upper=param.upper,
                      mean=param.mean,
                      coval=param.coval,
-                     probability=0.98,
+                     confidenceLevel=0.98,
                      parallelism=32)
         rs
 ```

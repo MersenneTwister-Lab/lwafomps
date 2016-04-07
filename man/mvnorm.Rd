@@ -4,10 +4,12 @@
 \alias{mvnorm}
 \title{Multivariate Normal Distribution with Low WAFOM Point Set}
 \usage{
-mvnorm(lower, upper, mean, coval, abseps, releps, probability = 0.9545,
-  tlimit = Inf, parallelism = 4)
+mvnorm(dimension, lower, upper, mean, coval, abseps, releps,
+  confidenceLevel = 0.95, timeLimit = Inf, parallelism = 4)
 }
 \arguments{
+\item{dimension}{dimension or number of variables.}
+
 \item{lower}{the vector of lower limits.}
 
 \item{upper}{the vector of upper limits.}
@@ -20,10 +22,9 @@ mvnorm(lower, upper, mean, coval, abseps, releps, probability = 0.9545,
 
 \item{releps}{expected relative error tolerance.}
 
-\item{probability}{the expected probability that the error of return value
-is smaller than the expected error tolerance.}
+\item{confidenceLevel}{confidence level.}
 
-\item{tlimit}{time limit (seconds).}
+\item{timeLimit}{time limit (seconds).}
 
 \item{parallelism}{degree of parallelism for fast calculation.}
 }
