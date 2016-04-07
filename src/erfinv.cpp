@@ -43,7 +43,7 @@ namespace ErrorFunction {
       http://libit.sourceforge.net/
       erfinv() in math.c
       LICENSE: GNU LIBRARY GENERAL PUBLIC LICENSE Version 2, June 1991
-      see COPYING_libit.
+      see LICENSE.
 
       modified by Mutsuo Saito, 2015.
     */

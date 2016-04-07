@@ -2,7 +2,7 @@
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{mvnorm Multivariate Normal Distribution}
-  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{knitr::knit2html(spin(knit = FALSE), force_v1 = TRUE)}
   \usepackage[utf8](inputenc)
 ---
 
