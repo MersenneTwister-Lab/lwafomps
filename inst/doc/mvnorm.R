@@ -1,32 +1,4 @@
----
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{mvnorm Multivariate Normal Distribution}
-  %\VignetteEngine{knitr::rmarkdown}
-  \usepackage[utf8](inputenc)
----
-
-Multivariate Normal Distribution with Low WAFOM Point Set
----------------------------------------------------------
-
-Calculate Cumulative distribution of Multivariate
-Normal Distribution using randomized Quasi-Monte-Calro
-Method. Low WAFOM Point Set is used for QMC.
-
-Currently, Low WAFOM Point Set is pre-computed for dimension 4 to 16.
-This limitation applies to `mvnorm` function.
-
-Variance-covariance matrix should be diagonally dominant
-and, of course, should be symmetric semi-positive definite.
-
-example1:
-
-Simply calculate multivariate normal distribution.
-Interval of integration need to be specified by `lower` vector
-and `upper` vector. And also `mean` vector and `coval`,
-variance-covariance matrix should be given.
-
-```{r}
+## ------------------------------------------------------------------------
         library(lwafomps)
         param.s <- 4
         param.lower <- rep(-Inf, param.s)
@@ -43,15 +15,8 @@ variance-covariance matrix should be given.
                      mean=param.mean,
                      coval=param.coval)
         rs
-```
 
-example2:
-
-Optional parameter `abseps` specifies expected maximum absolute error.
-Absolute error in return value will be less than the value.
-Optional parameter `relesp` is usable for relative error.
-
-```{r}
+## ------------------------------------------------------------------------
         library(lwafomps)
         param.s <- 4
         param.lower <- rep(-Inf, param.s)
@@ -69,15 +34,8 @@ Optional parameter `relesp` is usable for relative error.
                      coval=param.coval,
                      abseps=1.0e-6)
         rs
-```
 
-example3:
-
-Optional parameter `confidenceLevel` is used for specifying a confidenceLevel
-that the true value is in error range. This confidenceLevel result to
-specify error range as sigma, two sigma and three sigma.
-
-```{r}
+## ------------------------------------------------------------------------
         library(lwafomps)
         param.s <- 4
         param.lower <- rep(-Inf, param.s)
@@ -95,16 +53,8 @@ specify error range as sigma, two sigma and three sigma.
                      coval=param.coval,
                      confidenceLevel=0.98)
         rs
-```
-example4:
 
-Optional parameter `timeLimit` is used for specifying time limit
-by seconds.
-Calculation will be stop with some late after time limit.
-After time limit, calculated value will be returned, but
-it may not satisfy expected error range or confidenceLevel.
-
-```{r}
+## ------------------------------------------------------------------------
         library(lwafomps)
         param.s <- 4
         param.lower <- rep(-Inf, param.s)
@@ -123,16 +73,8 @@ it may not satisfy expected error range or confidenceLevel.
                      confidenceLevel=0.98,
                      timeLimit=1.5)
         rs
-```
-example5:
 
-Optional parameter parallelism is used for specifying exectuiton block
-size.  If your computer has high parallel calculation ability,
-specifying large value may improve performance. Calculation is
-repeated multiple of parallelism time, too large value will lose
-performance.
-
-```{r}
+## ------------------------------------------------------------------------
         library(lwafomps)
         param.s <- 4
         param.lower <- rep(-Inf, param.s)
@@ -151,4 +93,4 @@ performance.
                      confidenceLevel=0.98,
                      parallelism=32)
         rs
-```
+
