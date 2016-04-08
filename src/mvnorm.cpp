@@ -1,5 +1,6 @@
 #include "mvnorm.h"
 #include "kahan.h"
+#include "inttypes.h"
 #include <iostream>
 #include <iomanip>
 #include <math.h>
