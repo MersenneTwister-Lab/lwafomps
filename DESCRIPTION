@@ -5,6 +5,12 @@ Version: 0.2
 Date: 2016-04-07
 Author: Mutsuo Saito
 Maintainer: Mutsuo Saito <saito@manieth.com>
+Authors@R: c(person("Makoto", "Matsumoto", role = "aut",
+                    email="m-mat@math.sci.hiroshima-u.ac.jp"),
+             person("Shinsuke", "Mori", role = c("aut","ctb"),
+                    email="shinsukemori@hiroshima-u.ac.jp"),
+             person("Mutsuo", "Saito", role = "cre",
+                    email="saito@manieth.com"))
 Description: Multivariate Normal Distribution with Low WAFOM Point Set.
 License: file LICENSE
 Imports:

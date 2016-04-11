@@ -265,7 +265,8 @@ namespace LowWAFOMPointSet {
 #endif
         Kahan QMCvalue;
         ps.setShift(shift);
-        int32_t max = INT32_C(1) << d;
+        int32_t max = 1;
+        max = max << d;
         for (int a = 0; a < max; ++a) {
 #if !defined(NO_RCPP)
             if (a % 10000 == 0) {

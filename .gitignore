@@ -11,9 +11,6 @@
 # RStudio files
 .Rproj.user/
 
-# Rbuildignore
-.Rbuildignore
-
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
@@ -25,3 +22,6 @@ vignettes/*.pdf
 src/*.o
 src/*.so
 src/*.rds
+
+# osx file
+.DS_Store
