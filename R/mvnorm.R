@@ -16,6 +16,10 @@ checkParam <- function(dimension, lower, upper, mean, coval, abseps, releps, con
 		dimension != ncol(coval) || dimension != nrow(coval)) {
 		stop("dimension mismatch!")
 	}
+	e <- try(chol(coval, pivot=TRUE), silent = TRUE)
+	if (class(e) == "try-error") {
+		stop("coval is not positive semi-definete")
+	}
 }
 
 calcConfidenceInterval <- function(samples, confidenceLevel) {
